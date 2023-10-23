@@ -1,0 +1,1554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="513b407a-b553-4d94-a457-a09043b97980" activeEnvironment="Default" name="sigipcauiws" resourceRoot="" soapui-version="5.7.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="TestSuite 1"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="429ce806-057c-4cc9-a7a5-7b1338dd8abc" wsaVersion="NONE" name="SigipimpcauPortSoap11" type="wsdl" bindingName="{http://schema.soap.web.sigipimpcau.sigip.at.gov.pt}SigipimpcauPortSoap11" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/nuno/Downloads/sigipcauiws.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\nuno\Downloads\sigipcauiws.wsdl"><con:part><con:url>file:\C:\Users\nuno\Downloads\sigipcauiws.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="SigipimpcauRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="request" type="tns:SigipimpcauRequestParameters"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SigipimpcauResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="1" name="response" type="tns:SigipimpcauResponseParameters"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="SigipimpcauRequestParameters">
+        <xs:sequence>
+          <!--Id da Declaração-->
+          <xs:element maxOccurs="1" minOccurs="0" name="DeclarationId" nillable="true" type="xs:integer"/>
+          <!--Número de Versão-->
+          <xs:element maxOccurs="1" minOccurs="0" name="VersionNumber" nillable="true" type="xs:int"/>
+          <!--Data de Alteração-->
+          <xs:element maxOccurs="1" minOccurs="1" name="ModificationDate" type="xs:date"/>
+          <!--Número de Referência Local – NRL-->
+          <xs:element maxOccurs="1" minOccurs="1" name="LocalReferenceNumber" type="xs:string"/>
+          <!--Número Provisório-->
+          <xs:element maxOccurs="1" minOccurs="1" name="TemporaryNumber" type="xs:string"/>
+          <!--Número da Declaração-->
+          <xs:element maxOccurs="1" minOccurs="0" name="DeclarationNumber" nillable="true" type="xs:string"/>
+          <!--Data-->
+          <xs:element maxOccurs="1" minOccurs="1" name="Date" type="xs:date"/>
+          <!--Indicador H6-->
+          <xs:element maxOccurs="1" minOccurs="1" name="H6Flag">
+            <xs:simpleType>
+              <xs:annotation>
+                <xs:documentation>0 – A declaração não é do tipo H6
+                            1 – A declaração é do tipo H6</xs:documentation>
+              </xs:annotation>
+              <xs:restriction base="xs:string">
+                <xs:length value="1"/>
+                <xs:enumeration value="0"/>
+                <xs:enumeration value="1"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <!--Estância Aduaneira da Declaração-->
+          <xs:element maxOccurs="1" minOccurs="1" name="DeclarationCustomsOffice" type="xs:string"/>
+          <!--Estância Aduaneira de Apresentação-->
+          <xs:element maxOccurs="1" minOccurs="0" name="GoodsPresentationCustomsOffice" nillable="true" type="xs:string"/>
+          <!--Massa Bruta-->
+          <xs:element maxOccurs="1" minOccurs="0" name="GrossMass" nillable="true" type="xs:decimal"/>
+          <!--Informações Adicionais-->
+          <xs:element maxOccurs="99" minOccurs="0" name="AdditionalInformation" nillable="true" type="tns:AdditionalInformation"/>
+          <!--Documento de Suporte-->
+          <xs:element maxOccurs="99" minOccurs="0" name="SupportDocument" nillable="true" type="tns:RequestDocument"/>
+          <!--Referência Adicional-->
+          <xs:element maxOccurs="99" minOccurs="0" name="AdditionalReference" nillable="true" type="tns:RequestDocument"/>
+          <!--Documento de Transporte-->
+          <xs:element maxOccurs="99" minOccurs="0" name="TransportDocument" nillable="true" type="tns:RequestDocument"/>
+          <!--Autorização-->
+          <xs:element maxOccurs="99" minOccurs="0" name="Authorization" nillable="true" type="tns:Authorization"/>
+          <!--Indicador de Autorização Simplificada-->
+          <xs:element maxOccurs="1" minOccurs="1" name="SimplifiedAuthorizationFlag">
+            <xs:simpleType>
+              <xs:annotation>
+                <xs:documentation>0 – Não foi solicitada uma autorização simplificada
+                            1 – Foi solicitada uma autorização simplificada</xs:documentation>
+              </xs:annotation>
+              <xs:restriction base="xs:string">
+                <xs:length value="1"/>
+                <xs:enumeration value="0"/>
+                <xs:enumeration value="1"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <!--País de Destino-->
+          <xs:element maxOccurs="1" minOccurs="0" name="DestinationCountry" nillable="true" type="xs:string"/>
+          <!--País de Expedição-->
+          <xs:element maxOccurs="1" minOccurs="0" name="DispatchingCountry" nillable="true" type="xs:string"/>
+          <!--Código de região-->
+          <xs:element maxOccurs="1" minOccurs="0" name="RegionalCode" nillable="true" type="xs:string"/>
+          <!--Identificador de sistema-->
+          <xs:element maxOccurs="1" minOccurs="1" name="SystemId" type="xs:int"/>
+          <!--Utilizador-->
+          <xs:element maxOccurs="1" minOccurs="0" name="DeclUser" nillable="true" type="xs:string"/>
+          <!--Adição-->
+          <xs:element maxOccurs="5000" minOccurs="1" name="Additions" type="tns:AdditionRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SigipimpcauResponseParameters">
+        <xs:sequence>
+          <!--Id da Declaração-->
+          <xs:element maxOccurs="1" minOccurs="1" name="DeclarationId" type="xs:integer"/>
+          <!--Número de Versão-->
+          <xs:element maxOccurs="1" minOccurs="0" name="VersionNumber" type="xs:int"/>
+          <!--Número de Referência Local – NRL-->
+          <xs:element maxOccurs="1" minOccurs="1" name="LocalReferenceNumber" type="xs:string"/>
+          <!--Número Provisório-->
+          <xs:element maxOccurs="1" minOccurs="1" name="TemporaryNumber" type="xs:string"/>
+          <!--Número da Declaração-->
+          <xs:element maxOccurs="1" minOccurs="0" name="DeclarationNumber" type="xs:string"/>
+          <!--Data-->
+          <xs:element maxOccurs="1" minOccurs="1" name="Date" type="xs:date"/>
+          <!--Estância Aduaneira da Declaração-->
+          <xs:element maxOccurs="1" minOccurs="1" name="DeclarationCustomsOffice" type="xs:string"/>
+          <!--Mensagens de Erro do Cabeçalho-->
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="HeaderErrorMessages" type="tns:ErrorMessages"/>
+          <!--Adição-->
+          <xs:element maxOccurs="5000" minOccurs="1" name="Additions" type="tns:AdditionResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionRequest">
+        <xs:sequence>
+          <!--Número da Adição-->
+          <xs:element maxOccurs="1" minOccurs="1" name="AdditionNumber" type="xs:int"/>
+          <!--Unidades Suplementares-->
+          <xs:element maxOccurs="1" minOccurs="0" name="SuplementaryUnit" nillable="true" type="xs:decimal"/>
+          <!--Unidades Suplementares para Franquia/Isenção-->
+          <xs:element maxOccurs="1" minOccurs="0" name="Usfi" nillable="true" type="xs:decimal"/>
+          <!--Massa Bruta-->
+          <xs:element maxOccurs="1" minOccurs="0" name="GrossMass" nillable="true" type="xs:decimal"/>
+          <!--Massa Líquida-->
+          <xs:element maxOccurs="1" minOccurs="0" name="NetMass" nillable="true" type="xs:decimal"/>
+          <!--Código CUS-->
+          <xs:element maxOccurs="1" minOccurs="0" name="CusCode" nillable="true" type="xs:string"/>
+          <!--Código Mercadorias - Código SH-->
+          <xs:element maxOccurs="1" minOccurs="0" name="GoodsCodeSH" nillable="true" type="xs:string"/>
+          <!--Código Mercadorias - Código NC-->
+          <xs:element maxOccurs="1" minOccurs="0" name="GoodsCodeNC" nillable="true" type="xs:string"/>
+          <!--Código Mercadorias – Código TARIC-->
+          <xs:element maxOccurs="1" minOccurs="0" name="GoodsCodeTARIC" nillable="true" type="xs:string"/>
+          <!--País de Origem-->
+          <xs:element maxOccurs="1" minOccurs="0" name="OriginCountryCode" nillable="true" type="xs:string"/>
+          <!--País de Origem Preferencial-->
+          <xs:element maxOccurs="1" minOccurs="0" name="PreferredOriginCountry" nillable="true" type="xs:string"/>
+          <!--País de Destino-->
+          <xs:element maxOccurs="1" minOccurs="0" name="DestinationCountry" nillable="true" type="xs:string"/>
+          <!--País de Expedição-->
+          <xs:element maxOccurs="1" minOccurs="0" name="DispatchingCountry" nillable="true" type="xs:string"/>
+          <!--Preferência-->
+          <xs:element maxOccurs="1" minOccurs="0" name="Preference" nillable="true" type="xs:string"/>
+          <!--Regime Solicitado-->
+          <xs:element maxOccurs="1" minOccurs="0" name="RequestedRegime" nillable="true" type="xs:string"/>
+          <!--Regime Adicional-->
+          <xs:element maxOccurs="99" minOccurs="0" name="AdditionalRegime" nillable="true" type="xs:string"/>
+          <!--Número de Ordem do Contingente-->
+          <xs:element maxOccurs="1" minOccurs="0" name="QuotaOrderNumber" nillable="true" type="xs:string"/>
+          <!--Valor Estatístico-->
+          <xs:element maxOccurs="1" minOccurs="0" name="StatisticalValue" nillable="true" type="xs:decimal"/>
+          <!--Método de Avaliação-->
+          <xs:element maxOccurs="1" minOccurs="0" name="ValuationMethod" nillable="true" type="xs:int"/>
+          <!--Base Tributável-->
+          <xs:element maxOccurs="99" minOccurs="0" name="TaxBase" nillable="true" type="tns:MeasureUnitAndQualifier"/>
+          <!--Unidades para Restrições-->
+          <xs:element maxOccurs="99" minOccurs="0" name="UnitsForRestrictions" nillable="true" type="tns:MeasureUnitAndQualifier"/>
+          <!--Unidades para H6-->
+          <xs:element maxOccurs="99" minOccurs="0" name="UnitsForH6" nillable="true" type="tns:MeasureUnitAndQualifier"/>
+          <!--Regime do IVA-->
+          <xs:element maxOccurs="1" minOccurs="1" name="VatRegime">
+            <xs:annotation>
+              <xs:documentation>1 - IOSS
+                        2 - Especial
+                        3 - Normal</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:length value="1"/>
+                <xs:enumeration value="1"/>
+                <xs:enumeration value="2"/>
+                <xs:enumeration value="3"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <!--Informações Adicionais-->
+          <xs:element maxOccurs="99" minOccurs="0" name="AdditionalInformation" nillable="true" type="tns:AdditionalInformation"/>
+          <!--Documento de Suporte-->
+          <xs:element maxOccurs="99" minOccurs="0" name="SupportDocument" nillable="true" type="tns:SupportDocument"/>
+          <!--Referência Adicional-->
+          <xs:element maxOccurs="99" minOccurs="0" name="AdditionalReference" nillable="true" type="tns:RequestDocument"/>
+          <!--Documento de Transporte-->
+          <xs:element maxOccurs="99" minOccurs="0" name="TransportDocument" nillable="true" type="tns:RequestDocument"/>
+          <!--Autorização-->
+          <xs:element maxOccurs="99" minOccurs="0" name="Authorization" nillable="true" type="tns:Authorization"/>
+          <!--Indicador de Autorização Simplificada-->
+          <xs:element maxOccurs="1" minOccurs="1" name="SimplifiedAuthorizationFlag">
+            <xs:simpleType>
+              <xs:annotation>
+                <xs:documentation>0 – Não foi solicitada uma autorização simplificada
+                            1 – Foi solicitada uma autorização simplificada</xs:documentation>
+              </xs:annotation>
+              <xs:restriction base="xs:string">
+                <xs:length value="1"/>
+                <xs:enumeration value="0"/>
+                <xs:enumeration value="1"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <!--Código Adicional Nacional-->
+          <xs:element maxOccurs="99" minOccurs="0" name="NationalAdditionalCode" nillable="true" type="xs:string"/>
+          <!--Código Adicional TARIC-->
+          <xs:element maxOccurs="99" minOccurs="0" name="AdditionalCodeTARIC" nillable="true" type="xs:string"/>
+          <!--Valor Aduaneiro-->
+          <xs:element maxOccurs="1" minOccurs="0" name="CustomsValue" nillable="true" type="xs:decimal"/>
+          <!--Dívida Potencial-->
+          <xs:element maxOccurs="1" minOccurs="0" name="PotentialDebt" nillable="true" type="tns:PotentialDebtRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionResponse">
+        <xs:sequence>
+          <!--Número da Adição-->
+          <xs:element maxOccurs="1" minOccurs="1" name="AdditionNumber" type="xs:int"/>
+          <!--Indicador da Existência de IEC’s-->
+          <xs:element maxOccurs="1" minOccurs="0" name="IECExistenceFlag" type="xs:string"/>
+          <!--Indicador da Existência de ISV-->
+          <xs:element maxOccurs="1" minOccurs="0" name="ISVExistenceFlag" type="xs:string"/>
+          <!--Indicador de Exclusão da Liquidação Automática-->
+          <xs:element maxOccurs="1" minOccurs="1" name="AutomaticSettlementExclusionFlag" type="xs:string"/>
+          <!--Indicador de Garantia de Contingente Crítico-->
+          <xs:element maxOccurs="1" minOccurs="0" name="CriticalQuotaAssuranceFlag" type="xs:int"/>
+          <!--Indicador de País de Origem-->
+          <xs:element maxOccurs="1" minOccurs="0" name="OriginCountryFlag" type="xs:string"/>
+          <!--Indicador de País de Expedição-->
+          <xs:element maxOccurs="1" minOccurs="0" name="ExportExpeditionFlag" type="xs:string"/>
+          <!--Indicador de País de Destino-->
+          <xs:element maxOccurs="1" minOccurs="0" name="DestinationCountryFlag" type="xs:string"/>
+          <!--Mensagens de Erro por Adição-->
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="AdditionErrorMessages" type="tns:ErrorMessages"/>
+          <!--Lista de Medidas por Adição-->
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="MeasureListPerAddition" type="tns:MeasureListPerAddition"/>
+          <!--Documentos de Suporte da Adição-->
+          <xs:element maxOccurs="99" minOccurs="0" name="AdditionDocuments" type="tns:AdditionDocuments"/>
+          <!--Referências Adicionais da Adição-->
+          <xs:element maxOccurs="99" minOccurs="0" name="AdditionalAdditionReferences" type="tns:AdditionalAdditionReferences"/>
+          <!--Unidade de Medida-->
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="MeasureUnit" type="tns:MeasureUnit"/>
+          <!--Adicionais-->
+          <xs:element maxOccurs="198" minOccurs="0" name="Additional" type="tns:Additional"/>
+          <!--Indicador de Negação de Certificados/Adicionais-->
+          <xs:element maxOccurs="1" minOccurs="0" name="CertificateDenialFlag" type="xs:string"/>
+          <!--Dívida Potencial-->
+          <xs:element maxOccurs="1" minOccurs="0" name="PotentialDebt" type="tns:PotentialDebtResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PotentialDebtRequest">
+        <xs:sequence>
+          <!--Código Pautal DP-->
+          <xs:element maxOccurs="1" minOccurs="0" name="GoodsCode" nillable="true" type="xs:string"/>
+          <!--País de Origem DP-->
+          <xs:element maxOccurs="1" minOccurs="0" name="OriginCountryCode" nillable="true" type="xs:string"/>
+          <!--Adicional TARIC DP-->
+          <xs:element maxOccurs="99" minOccurs="0" name="AdditionalCodeTARIC" nillable="true" type="xs:string"/>
+          <!--Adicional Nacional DP-->
+          <xs:element maxOccurs="99" minOccurs="0" name="NationalAdditionalCode" nillable="true" type="xs:string"/>
+          <!--Preferência DP-->
+          <xs:element maxOccurs="1" minOccurs="0" name="Preference" nillable="true" type="xs:string"/>
+          <!--Regime Solicitado DP-->
+          <xs:element maxOccurs="1" minOccurs="0" name="RequestedRegime" nillable="true" type="xs:string"/>
+          <!--Unidades DP-->
+          <xs:element maxOccurs="99" minOccurs="0" name="UnitsForPD" nillable="true" type="tns:MeasureUnitAndQualifier"/>
+          <!--Unidades para Restrições-->
+          <xs:element maxOccurs="99" minOccurs="0" name="UnitsForRestrictions" nillable="true" type="tns:MeasureUnitAndQualifier"/>
+          <!--Unidades Suplementares para Franquia/Isenção-->
+          <xs:element maxOccurs="1" minOccurs="0" name="Usfi" nillable="true" type="xs:decimal"/>
+          <!--Unidades Suplementares-->
+          <xs:element maxOccurs="1" minOccurs="0" name="SuplementaryUnit" nillable="true" type="xs:decimal"/>
+          <!--Valor Aduaneiro DP-->
+          <xs:element maxOccurs="1" minOccurs="0" name="CustomsValue" nillable="true" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalInformation">
+        <xs:sequence>
+          <!--Código-->
+          <xs:element maxOccurs="1" minOccurs="1" name="Code" type="xs:string"/>
+          <!--Texto-->
+          <xs:element maxOccurs="1" minOccurs="0" name="Text" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestDocument">
+        <xs:sequence>
+          <!--Tipo-->
+          <xs:element maxOccurs="1" minOccurs="1" name="Type" type="xs:string"/>
+          <!--Número de Referência-->
+          <xs:element maxOccurs="1" minOccurs="0" name="ReferenceNumber" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SupportDocument">
+        <xs:sequence>
+          <!--Tipo-->
+          <xs:element maxOccurs="1" minOccurs="1" name="Type" type="xs:string"/>
+          <!--Número de Referência-->
+          <xs:element maxOccurs="1" minOccurs="0" name="ReferenceNumber" nillable="true" type="xs:string"/>
+          <!--Unidade de Medida e Qualificador-->
+          <xs:element maxOccurs="1" minOccurs="1" name="MeasureUnitAndQualifier" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Authorization">
+        <xs:sequence>
+          <!--Tipo-->
+          <xs:element maxOccurs="1" minOccurs="1" name="Type" type="xs:string"/>
+          <!--Número de Referência-->
+          <xs:element maxOccurs="1" minOccurs="1" name="ReferenceNumber" type="xs:string"/>
+          <!--Titular da Autorização-->
+          <xs:element maxOccurs="1" minOccurs="1" name="HolderEORINumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MeasureUnitAndQualifier">
+        <xs:sequence>
+          <!--Unidade de Medida e Qualificador-->
+          <xs:element maxOccurs="1" minOccurs="1" name="MeasureUnitAndQualifier" type="xs:string"/>
+          <!--Quantidade-->
+          <xs:element maxOccurs="1" minOccurs="1" name="Quantity" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ErrorMessages">
+        <xs:sequence>
+          <!--Código da Mensagem-->
+          <xs:element maxOccurs="1" minOccurs="1" name="Code" type="xs:string"/>
+          <!--Texto-->
+          <xs:element maxOccurs="1" minOccurs="1" name="Text" type="xs:string"/>
+          <!--Regulamento-->
+          <xs:element maxOccurs="1" minOccurs="0" name="Regulation" type="xs:string"/>
+          <!--Número de Ordem-->
+          <xs:element maxOccurs="1" minOccurs="0" name="MeasureOrderNumber" type="xs:string"/>
+          <!--Campos-->
+          <xs:element maxOccurs="1" minOccurs="0" name="Fields" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MeasureListPerAddition">
+        <xs:sequence>
+          <!--Medida Aplicável-->
+          <xs:element maxOccurs="1" minOccurs="1" name="ApplicableMeasure" type="xs:string"/>
+          <!--Tipo de Imposição-->
+          <xs:element maxOccurs="1" minOccurs="0" name="ImpositionType" type="xs:string"/>
+          <!--Código Adicional-->
+          <xs:element maxOccurs="1" minOccurs="0" name="AdditionalCode" type="xs:string"/>
+          <!--Base de Tributação-->
+          <xs:element maxOccurs="1" minOccurs="0" name="TaxBase" type="xs:decimal"/>
+          <!--Valor da Taxa-->
+          <xs:element maxOccurs="1" minOccurs="0" name="Fee" type="xs:decimal"/>
+          <!--Unidade de Medida-->
+          <xs:element maxOccurs="1" minOccurs="0" name="TaxUnit" type="xs:string"/>
+          <!--Qualificador-->
+          <xs:element maxOccurs="1" minOccurs="0" name="UnitQualifier" type="xs:string"/>
+          <!--Montante Calculado-->
+          <xs:element maxOccurs="1" minOccurs="0" name="EstimatedAmount" type="xs:decimal"/>
+          <!--Indicador de Garantia-->
+          <xs:element maxOccurs="1" minOccurs="0" name="AssuranceFlag" type="xs:string"/>
+          <!--Data de Referência-->
+          <xs:element maxOccurs="1" minOccurs="0" name="ReferenceDate" type="xs:date"/>
+          <!--Indicador para o SSA-->
+          <xs:element maxOccurs="1" minOccurs="0" name="SSAFlag" type="xs:string"/>
+          <!--Grupo de Franquia e Isenções-->
+          <xs:element maxOccurs="1" minOccurs="0" name="ReliefsAndExemptions" type="xs:string"/>
+          <!--Indicador de Exclusão da Liquidação Automática-->
+          <xs:element maxOccurs="1" minOccurs="0" name="AutomaticSettlementExclusionFlag" type="xs:string"/>
+          <!--Mensagens de Erro por Medida-->
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="MeasureErrorMessages" type="tns:MeasureErrorMessages"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MeasureErrorMessages">
+        <xs:sequence>
+          <!--Código da Mensagem-->
+          <xs:element maxOccurs="1" minOccurs="1" name="Code" type="xs:string"/>
+          <!--Texto-->
+          <xs:element maxOccurs="1" minOccurs="1" name="Text" type="xs:string"/>
+          <!--Regulamento-->
+          <xs:element maxOccurs="1" minOccurs="0" name="Regulation" type="xs:string"/>
+          <!--Número de Ordem-->
+          <xs:element maxOccurs="1" minOccurs="0" name="MeasureOrderNumber" type="xs:string"/>
+          <!--Campos-->
+          <xs:element maxOccurs="1" minOccurs="0" name="Fields" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionDocuments">
+        <xs:sequence>
+          <!--Código de Certificado-->
+          <xs:element maxOccurs="1" minOccurs="1" name="CertificateCode" type="xs:string"/>
+          <!--Particularidades do Certificado-->
+          <xs:element maxOccurs="1" minOccurs="0" name="CertificateType" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalAdditionReferences">
+        <xs:sequence>
+          <!--Código de Certificado-->
+          <xs:element maxOccurs="1" minOccurs="1" name="CertificateCode" type="xs:string"/>
+          <!--Particularidades do Certificado-->
+          <xs:element maxOccurs="1" minOccurs="0" name="CertificateType" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MeasureUnit">
+        <xs:sequence>
+          <!--Unidade de Medida e Qualificador-->
+          <xs:element maxOccurs="1" minOccurs="1" name="MeasureUnit" type="xs:string"/>
+          <!--Indicador de Utilização da Unidade de Medida e Qualificador-->
+          <xs:element maxOccurs="1" minOccurs="1" name="Indicator" type="xs:string"/>
+          <!--Mensagens de Erro por Unidade de Medida-->
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="MeasureUnitErrorMessages" type="tns:MeasureUnitErrorMessages"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PotentialDebtResponse">
+        <xs:sequence>
+          <!--Indicador da Existência de IEC’s-->
+          <xs:element maxOccurs="1" minOccurs="0" name="IECExistenceFlag" type="xs:string"/>
+          <!--Indicador da Existência de ISV-->
+          <xs:element maxOccurs="1" minOccurs="0" name="ISVExistenceFlag" type="xs:string"/>
+          <!--Indicador de País de Origem-->
+          <xs:element maxOccurs="1" minOccurs="0" name="OriginCountryFlag" type="xs:string"/>
+          <!--Indicador de Exclusão da Liquidação Automática-->
+          <xs:element maxOccurs="1" minOccurs="1" name="AutomaticSettlementExclusionFlag" type="xs:string"/>
+          <!--Mensagens de Erro por Adição-->
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="AdditionErrorMessages" type="tns:ErrorMessages"/>
+          <!--Lista de Medidas por Adição-->
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="MeasureListPerAddition" type="tns:MeasureListPerAddition"/>
+          <!--Unidade de Medida-->
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="MeasureUnit" type="tns:MeasureUnit"/>
+          <!--Adicionais-->
+          <xs:element maxOccurs="198" minOccurs="0" name="Additional" type="tns:Additional"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MeasureUnitErrorMessages">
+        <xs:sequence>
+          <!--Código da Mensagem-->
+          <xs:element maxOccurs="1" minOccurs="1" name="Code" type="xs:string"/>
+          <!--Texto-->
+          <xs:element maxOccurs="1" minOccurs="1" name="Text" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Additional">
+        <xs:sequence>
+          <!--Código Adicional-->
+          <xs:element maxOccurs="1" minOccurs="1" name="AdditionalCode" type="xs:string"/>
+          <!--Tipo de Adicional-->
+          <xs:element maxOccurs="1" minOccurs="1" name="AdditionalType" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="SigipimpcauRequest">
+    <wsdl:part element="tns:SigipimpcauRequest" name="SigipimpcauRequest"/>
+  </wsdl:message>
+  <wsdl:message name="SigipimpcauResponse">
+    <wsdl:part element="tns:SigipimpcauResponse" name="SigipimpcauResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="SigipimpcauPort">
+    <wsdl:operation name="Sigipimpcau">
+      <wsdl:input message="tns:SigipimpcauRequest" name="SigipimpcauRequest"/>
+      <wsdl:output message="tns:SigipimpcauResponse" name="SigipimpcauResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SigipimpcauPortSoap11" type="tns:SigipimpcauPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Sigipimpcau">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="SigipimpcauRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SigipimpcauResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SigipimpcauPortService">
+    <wsdl:port binding="tns:SigipimpcauPortSoap11" name="SigipimpcauPortSoap11">
+      <soap:address location="http://sigipcauiws.tainfpautalqua.ritta.local:80/sigipcauiws/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://sigipcauiws.tainfpautalqua.ritta.local:80/sigipcauiws/ws</con:endpoint></con:endpoints><con:operation id="3fae84b4-c5ae-4476-aa69-2f8f0d16e3b2" isOneWay="false" action="" name="Sigipimpcau" bindingOperationName="Sigipimpcau" type="Request-Response" outputName="SigipimpcauResponse" inputName="SigipimpcauRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="420b5105-1f80-46cc-881d-1be7d383c6b8" name="continente"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sigipcauiws.tainfpautaldev.ritta.local:80/sigipcauiws/ws</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:SigipimpcauRequest>
+         <sch:request>
+            <!--Optional:-->
+            <sch:VersionNumber>15</sch:VersionNumber>
+            <sch:ModificationDate>2008-09-28</sch:ModificationDate>
+            <sch:LocalReferenceNumber>21PT980112664200000152</sch:LocalReferenceNumber>
+            <sch:TemporaryNumber>123456789012345678</sch:TemporaryNumber>
+            <!--Optional:-->
+            <sch:DeclarationNumber>123456789012345678</sch:DeclarationNumber>
+            <sch:Date>2023-04-13</sch:Date>
+            <sch:H6Flag>1</sch:H6Flag>
+            <sch:DeclarationCustomsOffice>PT001964</sch:DeclarationCustomsOffice>
+            <!--<sch:DeclarationCustomsOffice>PT000095</sch:DeclarationCustomsOffice>-->
+            <sch:GoodsPresentationCustomsOffice>12345678</sch:GoodsPresentationCustomsOffice>
+            <!--Optional:-->
+            <sch:GrossMass>100</sch:GrossMass>
+            <!--0 to 99 repetitions:-->            
+            <!--Optional:-->
+            <sch:AdditionalInformation>
+             <sch:Code>12345</sch:Code>
+             <sch:Text>1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901</sch:Text>
+            </sch:AdditionalInformation>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <!--<sch:SupportDocument>
+            <sch:Type>U090</sch:Type>
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:SupportDocument>-->
+            <!--0 to 99 repetitions:-->
+            <!--Optional:-->
+            <sch:AdditionalReference>
+             <sch:Type>Y063</sch:Type>
+               <!--Optional:-->
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:AdditionalReference>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <sch:TransportDocument>
+            <sch:Type>U110</sch:Type>
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:TransportDocument>
+            <sch:TransportDocument>
+            <sch:Type>C640</sch:Type>
+            <sch:ReferenceNumber>121867890</sch:ReferenceNumber>
+            </sch:TransportDocument>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <!--<sch:Authorization>
+            <sch:Type>D018</sch:Type>
+            <sch:ReferenceNumber>12345678901234567890123456789012345</sch:ReferenceNumber>
+             <sch:HolderEORINumber>12345678901234567</sch:HolderEORINumber>
+            </sch:Authorization>-->
+            <!--Optional:-->
+            <sch:SimplifiedAuthorizationFlag>1</sch:SimplifiedAuthorizationFlag>
+            <sch:DestinationCountry>CH</sch:DestinationCountry>
+            <sch:DispatchingCountry>AL</sch:DispatchingCountry>
+             <!--continente-->
+            <sch:RegionalCode>50A</sch:RegionalCode>
+             <!--açores-->
+            <!--<sch:RegionalCode>60A</sch:RegionalCode>-->
+             <!--madeira-->
+            <!--<sch:RegionalCode>70A</sch:RegionalCode>-->
+            <sch:SystemId>0</sch:SystemId>
+           <sch:DeclUser>10rfrfrf</sch:DeclUser>
+            <!--1 to 5000 repetitions:-->
+            <sch:Additions>
+               <sch:AdditionNumber>1</sch:AdditionNumber>
+               <!--Optional:-->
+              <sch:SuplementaryUnit>20</sch:SuplementaryUnit>
+               <!--Optional:-->
+               <!--<sch:Usfi>20</sch:Usfi>-->
+               <!--Optional:-->
+               <sch:GrossMass>100</sch:GrossMass>
+               <!--Optional:-->
+               <sch:NetMass>100</sch:NetMass>
+               <!--Optional:-->
+              <sch:CusCode>C12345678</sch:CusCode>
+               <!--Optional:-->               
+               <sch:GoodsCodeSH>010290</sch:GoodsCodeSH>
+               <!--Optional:-->
+               <sch:GoodsCodeNC>29</sch:GoodsCodeNC>
+               <!--Optional:-->
+               <sch:GoodsCodeTARIC>30</sch:GoodsCodeTARIC>
+               <!--Optional:-->
+               <sch:OriginCountryCode>AL</sch:OriginCountryCode>
+               <!--Optional:-->
+               <sch:PreferredOriginCountry>BR</sch:PreferredOriginCountry>
+               <!--Optional:-->
+               <sch:DestinationCountry>ES</sch:DestinationCountry>
+               <!--Optional:-->
+               <!--<sch:DispatchingCountry>CA</sch:DispatchingCountry>-->
+               <!--Optional:-->
+               <sch:Preference>123</sch:Preference>
+               <!--Optional:-->
+               <sch:RequestedRegime>12</sch:RequestedRegime>
+               <!--0 to 99 repetitions:-->
+               <sch:AdditionalRegime>4II</sch:AdditionalRegime>
+               <!--Optional:-->
+               <!--<sch:QuotaOrderNumber>090113</sch:QuotaOrderNumber>-->
+               <!--Optional:-->
+               <sch:StatisticalValue>1234567890123456.45</sch:StatisticalValue>
+               <!--Optional:-->
+               <sch:ValuationMethod>1</sch:ValuationMethod>
+               <!--0 to 99 repetitions:-->
+               <!--Optional:-->
+               <sch:TaxBase>
+                  <sch:MeasureUnitAndQualifier>TNEG</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>0.100</sch:Quantity>
+               </sch:TaxBase>
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <!--<sch:UnitsForRestrictions>
+                  <sch:MeasureUnitAndQualifier>KGM</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>100</sch:Quantity>
+               </sch:UnitsForRestrictions>-->
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <sch:UnitsForH6>
+                 <sch:MeasureUnitAndQualifier>KGM</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>100</sch:Quantity>
+               </sch:UnitsForH6>
+               <sch:VatRegime>3</sch:VatRegime>
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <sch:AdditionalInformation>
+                <sch:Code>34567</sch:Code>
+                <sch:Text>234234?</sch:Text>
+               </sch:AdditionalInformation>
+               <!--0 to 99 repetitions:-->
+               <sch:SupportDocument>
+                  <sch:Type>U110</sch:Type>
+                  <sch:ReferenceNumber>12345</sch:ReferenceNumber>
+                   <!--este campo abaixo só pode ser usado nos adicionais:-->
+                  <sch:MeasureUnitAndQualifier>1234</sch:MeasureUnitAndQualifier>
+               </sch:SupportDocument>
+               <!--0 to 99 repetitions:-->
+               <sch:AdditionalReference>
+                 <sch:Type>3Y48</sch:Type>
+                 <sch:ReferenceNumber>12345688</sch:ReferenceNumber>
+               </sch:AdditionalReference>
+               <!--0 to 99 repetitions:-->
+               <!--<sch:TransportDocument>
+                <sch:Type>1234</sch:Type>
+                <sch:ReferenceNumber>1234</sch:ReferenceNumber>
+               </sch:TransportDocument>-->
+               <!--0 to 99 repetitions:-->
+               <!--<sch:Authorization>
+               <sch:Type>1234</sch:Type>
+               <sch:ReferenceNumber>12345678901234567890123567890123455</sch:ReferenceNumber>
+               <sch:HolderEORINumber>12345678901234567</sch:HolderEORINumber>
+               </sch:Authorization>-->
+               <!--0 to 99 repetitions:-->
+               <sch:SimplifiedAuthorizationFlag>0</sch:SimplifiedAuthorizationFlag>
+              <sch:NationalAdditionalCode>1060</sch:NationalAdditionalCode>
+               <!--<sch:NationalAdditionalCode>1041</sch:NationalAdditionalCode>-->
+                <!--0 to 99 repetitions:-->
+                <!--<sch:AdditionalCodeTARIC>F499</sch:AdditionalCodeTARIC>-->
+                <!--<sch:AdditionalCodeTARIC>3200</sch:AdditionalCodeTARIC>-->
+               <!--Optional:-->
+              <sch:CustomsValue>1500</sch:CustomsValue>            
+             </sch:Additions>
+         </sch:request>
+      </sch:SigipimpcauRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt/SigipimpcauPort/SigipimpcauRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="3b841b6a-22a8-422e-83c6-809a1ad4c78b" name="acores"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sigipcauiws.tainfpautaldev.ritta.local:80/sigipcauiws/ws</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:SigipimpcauRequest>
+         <sch:request>
+            <!--Optional:-->
+            <sch:VersionNumber>15</sch:VersionNumber>
+            <sch:ModificationDate>2008-09-28</sch:ModificationDate>
+            <sch:LocalReferenceNumber>21PT980112664200000152</sch:LocalReferenceNumber>
+            <sch:TemporaryNumber>123456789012345678</sch:TemporaryNumber>
+            <!--Optional:-->
+            <sch:DeclarationNumber>123456789012345678</sch:DeclarationNumber>
+            <sch:Date>2023-04-13</sch:Date>
+            <sch:H6Flag>1</sch:H6Flag>
+            <sch:DeclarationCustomsOffice>PT001964</sch:DeclarationCustomsOffice>
+            <!--<sch:DeclarationCustomsOffice>PT000095</sch:DeclarationCustomsOffice>-->
+            <sch:GoodsPresentationCustomsOffice>12345678</sch:GoodsPresentationCustomsOffice>
+            <!--Optional:-->
+            <sch:GrossMass>100</sch:GrossMass>
+            <!--0 to 99 repetitions:-->            
+            <!--Optional:-->
+            <sch:AdditionalInformation>
+             <sch:Code>12345</sch:Code>
+             <sch:Text>1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901</sch:Text>
+            </sch:AdditionalInformation>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <!--<sch:SupportDocument>
+            <sch:Type>U090</sch:Type>
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:SupportDocument>-->
+            <!--0 to 99 repetitions:-->
+            <!--Optional:-->
+            <sch:AdditionalReference>
+             <sch:Type>Y063</sch:Type>
+               <!--Optional:-->
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:AdditionalReference>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <sch:TransportDocument>
+            <sch:Type>U110</sch:Type>
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:TransportDocument>
+            <sch:TransportDocument>
+            <sch:Type>C640</sch:Type>
+            <sch:ReferenceNumber>121867890</sch:ReferenceNumber>
+            </sch:TransportDocument>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <!--<sch:Authorization>
+            <sch:Type>D018</sch:Type>
+            <sch:ReferenceNumber>12345678901234567890123456789012345</sch:ReferenceNumber>
+             <sch:HolderEORINumber>12345678901234567</sch:HolderEORINumber>
+            </sch:Authorization>-->
+            <!--Optional:-->
+            <sch:SimplifiedAuthorizationFlag>1</sch:SimplifiedAuthorizationFlag>
+            <sch:DestinationCountry>CH</sch:DestinationCountry>
+            <sch:DispatchingCountry>AL</sch:DispatchingCountry>
+             <!--continente-->
+            <!--<sch:RegionalCode>50A</sch:RegionalCode>-->
+             <!--açores-->
+            <sch:RegionalCode>60A</sch:RegionalCode>
+             <!--madeira-->
+            <!--<sch:RegionalCode>70A</sch:RegionalCode>-->
+            <sch:SystemId>0</sch:SystemId>
+           <sch:DeclUser>10rfrfrf</sch:DeclUser>
+            <!--1 to 5000 repetitions:-->
+            <sch:Additions>
+               <sch:AdditionNumber>1</sch:AdditionNumber>
+               <!--Optional:-->
+              <sch:SuplementaryUnit>20</sch:SuplementaryUnit>
+               <!--Optional:-->
+               <!--<sch:Usfi>20</sch:Usfi>-->
+               <!--Optional:-->
+               <sch:GrossMass>100</sch:GrossMass>
+               <!--Optional:-->
+               <sch:NetMass>100</sch:NetMass>
+               <!--Optional:-->
+              <sch:CusCode>C12345678</sch:CusCode>
+               <!--Optional:-->               
+               <sch:GoodsCodeSH>010290</sch:GoodsCodeSH>
+               <!--Optional:-->
+               <sch:GoodsCodeNC>29</sch:GoodsCodeNC>
+               <!--Optional:-->
+               <sch:GoodsCodeTARIC>30</sch:GoodsCodeTARIC>
+               <!--Optional:-->
+               <sch:OriginCountryCode>AL</sch:OriginCountryCode>
+               <!--Optional:-->
+               <sch:PreferredOriginCountry>BR</sch:PreferredOriginCountry>
+               <!--Optional:-->
+               <sch:DestinationCountry>ES</sch:DestinationCountry>
+               <!--Optional:-->
+               <!--<sch:DispatchingCountry>CA</sch:DispatchingCountry>-->
+               <!--Optional:-->
+               <sch:Preference>123</sch:Preference>
+               <!--Optional:-->
+               <sch:RequestedRegime>12</sch:RequestedRegime>
+               <!--0 to 99 repetitions:-->
+               <sch:AdditionalRegime>4II</sch:AdditionalRegime>
+               <!--Optional:-->
+               <!--<sch:QuotaOrderNumber>090113</sch:QuotaOrderNumber>-->
+               <!--Optional:-->
+               <sch:StatisticalValue>1234567890123456.45</sch:StatisticalValue>
+               <!--Optional:-->
+               <sch:ValuationMethod>1</sch:ValuationMethod>
+               <!--0 to 99 repetitions:-->
+               <!--Optional:-->
+               <sch:TaxBase>
+                  <sch:MeasureUnitAndQualifier>TNEG</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>0.100</sch:Quantity>
+               </sch:TaxBase>
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <!--<sch:UnitsForRestrictions>
+                  <sch:MeasureUnitAndQualifier>KGM</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>100</sch:Quantity>
+               </sch:UnitsForRestrictions>-->
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <sch:UnitsForH6>
+                 <sch:MeasureUnitAndQualifier>KGM</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>100</sch:Quantity>
+               </sch:UnitsForH6>
+               <sch:VatRegime>3</sch:VatRegime>
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <sch:AdditionalInformation>
+                <sch:Code>34567</sch:Code>
+                <sch:Text>234234?</sch:Text>
+               </sch:AdditionalInformation>
+               <!--0 to 99 repetitions:-->
+               <sch:SupportDocument>
+                  <sch:Type>U110</sch:Type>
+                  <sch:ReferenceNumber>12345</sch:ReferenceNumber>
+                   <!--este campo abaixo só pode ser usado nos adicionais:-->
+                  <sch:MeasureUnitAndQualifier>1234</sch:MeasureUnitAndQualifier>
+               </sch:SupportDocument>
+               <!--0 to 99 repetitions:-->
+               <sch:AdditionalReference>
+                 <sch:Type>3Y48</sch:Type>
+                 <sch:ReferenceNumber>12345688</sch:ReferenceNumber>
+               </sch:AdditionalReference>
+               <!--0 to 99 repetitions:-->
+               <!--<sch:TransportDocument>
+                <sch:Type>1234</sch:Type>
+                <sch:ReferenceNumber>1234</sch:ReferenceNumber>
+               </sch:TransportDocument>-->
+               <!--0 to 99 repetitions:-->
+               <!--<sch:Authorization>
+               <sch:Type>1234</sch:Type>
+               <sch:ReferenceNumber>12345678901234567890123567890123455</sch:ReferenceNumber>
+               <sch:HolderEORINumber>12345678901234567</sch:HolderEORINumber>
+               </sch:Authorization>-->
+               <!--0 to 99 repetitions:-->
+               <sch:SimplifiedAuthorizationFlag>0</sch:SimplifiedAuthorizationFlag>
+              <sch:NationalAdditionalCode>1060</sch:NationalAdditionalCode>
+               <!--<sch:NationalAdditionalCode>1041</sch:NationalAdditionalCode>-->
+                <!--0 to 99 repetitions:-->
+                <!--<sch:AdditionalCodeTARIC>F499</sch:AdditionalCodeTARIC>-->
+                <!--<sch:AdditionalCodeTARIC>3200</sch:AdditionalCodeTARIC>-->
+               <!--Optional:-->
+              <sch:CustomsValue>1500</sch:CustomsValue>            
+             </sch:Additions>
+         </sch:request>
+      </sch:SigipimpcauRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt/SigipimpcauPort/SigipimpcauRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="1675faac-ee7c-4863-95b0-590624d0dc95" name="madeira"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sigipcauiws.tainfpautaldev.ritta.local:80/sigipcauiws/ws</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:SigipimpcauRequest>
+         <sch:request>
+            <!--Optional:-->
+            <sch:VersionNumber>15</sch:VersionNumber>
+            <sch:ModificationDate>2008-09-28</sch:ModificationDate>
+            <sch:LocalReferenceNumber>21PT980112664200000152</sch:LocalReferenceNumber>
+            <sch:TemporaryNumber>123456789012345678</sch:TemporaryNumber>
+            <!--Optional:-->
+            <sch:DeclarationNumber>123456789012345678</sch:DeclarationNumber>
+            <sch:Date>2023-04-13</sch:Date>
+            <sch:H6Flag>1</sch:H6Flag>
+            <sch:DeclarationCustomsOffice>PT001964</sch:DeclarationCustomsOffice>
+            <!--<sch:DeclarationCustomsOffice>PT000095</sch:DeclarationCustomsOffice>-->
+            <sch:GoodsPresentationCustomsOffice>12345678</sch:GoodsPresentationCustomsOffice>
+            <!--Optional:-->
+            <sch:GrossMass>100</sch:GrossMass>
+            <!--0 to 99 repetitions:-->            
+            <!--Optional:-->
+            <sch:AdditionalInformation>
+             <sch:Code>12345</sch:Code>
+             <sch:Text>1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901</sch:Text>
+            </sch:AdditionalInformation>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <!--<sch:SupportDocument>
+            <sch:Type>U090</sch:Type>
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:SupportDocument>-->
+            <!--0 to 99 repetitions:-->
+            <!--Optional:-->
+            <sch:AdditionalReference>
+             <sch:Type>Y063</sch:Type>
+               <!--Optional:-->
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:AdditionalReference>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <sch:TransportDocument>
+            <sch:Type>U110</sch:Type>
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:TransportDocument>
+            <sch:TransportDocument>
+            <sch:Type>C640</sch:Type>
+            <sch:ReferenceNumber>121867890</sch:ReferenceNumber>
+            </sch:TransportDocument>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <!--<sch:Authorization>
+            <sch:Type>D018</sch:Type>
+            <sch:ReferenceNumber>12345678901234567890123456789012345</sch:ReferenceNumber>
+             <sch:HolderEORINumber>12345678901234567</sch:HolderEORINumber>
+            </sch:Authorization>-->
+            <!--Optional:-->
+            <sch:SimplifiedAuthorizationFlag>1</sch:SimplifiedAuthorizationFlag>
+            <sch:DestinationCountry>CH</sch:DestinationCountry>
+            <sch:DispatchingCountry>AL</sch:DispatchingCountry>
+             <!--continente-->
+            <!--<sch:RegionalCode>50A</sch:RegionalCode>-->
+             <!--açores-->
+            <!--<sch:RegionalCode>60A</sch:RegionalCode>-->
+             <!--madeira-->
+            <sch:RegionalCode>70A</sch:RegionalCode>
+            <sch:SystemId>0</sch:SystemId>
+           <sch:DeclUser>10rfrfrf</sch:DeclUser>
+            <!--1 to 5000 repetitions:-->
+            <sch:Additions>
+               <sch:AdditionNumber>1</sch:AdditionNumber>
+               <!--Optional:-->
+              <sch:SuplementaryUnit>20</sch:SuplementaryUnit>
+               <!--Optional:-->
+               <!--<sch:Usfi>20</sch:Usfi>-->
+               <!--Optional:-->
+               <sch:GrossMass>100</sch:GrossMass>
+               <!--Optional:-->
+               <sch:NetMass>100</sch:NetMass>
+               <!--Optional:-->
+              <sch:CusCode>C12345678</sch:CusCode>
+               <!--Optional:-->               
+               <sch:GoodsCodeSH>010290</sch:GoodsCodeSH>
+               <!--Optional:-->
+               <sch:GoodsCodeNC>29</sch:GoodsCodeNC>
+               <!--Optional:-->
+               <sch:GoodsCodeTARIC>30</sch:GoodsCodeTARIC>
+               <!--Optional:-->
+               <sch:OriginCountryCode>AL</sch:OriginCountryCode>
+               <!--Optional:-->
+               <sch:PreferredOriginCountry>BR</sch:PreferredOriginCountry>
+               <!--Optional:-->
+               <sch:DestinationCountry>ES</sch:DestinationCountry>
+               <!--Optional:-->
+               <!--<sch:DispatchingCountry>CA</sch:DispatchingCountry>-->
+               <!--Optional:-->
+               <sch:Preference>123</sch:Preference>
+               <!--Optional:-->
+               <sch:RequestedRegime>12</sch:RequestedRegime>
+               <!--0 to 99 repetitions:-->
+               <sch:AdditionalRegime>4II</sch:AdditionalRegime>
+               <!--Optional:-->
+               <!--<sch:QuotaOrderNumber>090113</sch:QuotaOrderNumber>-->
+               <!--Optional:-->
+               <sch:StatisticalValue>1234567890123456.45</sch:StatisticalValue>
+               <!--Optional:-->
+               <sch:ValuationMethod>1</sch:ValuationMethod>
+               <!--0 to 99 repetitions:-->
+               <!--Optional:-->
+               <sch:TaxBase>
+                  <sch:MeasureUnitAndQualifier>TNEG</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>0.100</sch:Quantity>
+               </sch:TaxBase>
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <!--<sch:UnitsForRestrictions>
+                  <sch:MeasureUnitAndQualifier>KGM</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>100</sch:Quantity>
+               </sch:UnitsForRestrictions>-->
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <sch:UnitsForH6>
+                 <sch:MeasureUnitAndQualifier>KGM</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>100</sch:Quantity>
+               </sch:UnitsForH6>
+               <sch:VatRegime>3</sch:VatRegime>
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <sch:AdditionalInformation>
+                <sch:Code>34567</sch:Code>
+                <sch:Text>234234?</sch:Text>
+               </sch:AdditionalInformation>
+               <!--0 to 99 repetitions:-->
+               <sch:SupportDocument>
+                  <sch:Type>U110</sch:Type>
+                  <sch:ReferenceNumber>12345</sch:ReferenceNumber>
+                   <!--este campo abaixo só pode ser usado nos adicionais:-->
+                  <sch:MeasureUnitAndQualifier>1234</sch:MeasureUnitAndQualifier>
+               </sch:SupportDocument>
+               <!--0 to 99 repetitions:-->
+               <sch:AdditionalReference>
+                 <sch:Type>3Y48</sch:Type>
+                 <sch:ReferenceNumber>12345688</sch:ReferenceNumber>
+               </sch:AdditionalReference>
+               <!--0 to 99 repetitions:-->
+               <!--<sch:TransportDocument>
+                <sch:Type>1234</sch:Type>
+                <sch:ReferenceNumber>1234</sch:ReferenceNumber>
+               </sch:TransportDocument>-->
+               <!--0 to 99 repetitions:-->
+               <!--<sch:Authorization>
+               <sch:Type>1234</sch:Type>
+               <sch:ReferenceNumber>12345678901234567890123567890123455</sch:ReferenceNumber>
+               <sch:HolderEORINumber>12345678901234567</sch:HolderEORINumber>
+               </sch:Authorization>-->
+               <!--0 to 99 repetitions:-->
+               <sch:SimplifiedAuthorizationFlag>0</sch:SimplifiedAuthorizationFlag>
+              <sch:NationalAdditionalCode>1060</sch:NationalAdditionalCode>
+               <!--<sch:NationalAdditionalCode>1041</sch:NationalAdditionalCode>-->
+                <!--0 to 99 repetitions:-->
+                <!--<sch:AdditionalCodeTARIC>F499</sch:AdditionalCodeTARIC>-->
+                <!--<sch:AdditionalCodeTARIC>3200</sch:AdditionalCodeTARIC>-->
+               <!--Optional:-->
+              <sch:CustomsValue>1500</sch:CustomsValue>            
+             </sch:Additions>
+         </sch:request>
+      </sch:SigipimpcauRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt/SigipimpcauPort/SigipimpcauRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="6b85cb06-5a83-48c8-9bbb-c40bef8302d0" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="48f39fb4-62d3-42f2-8a9e-cc422464c3ee" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="f1c9bc1a-4ff2-43d5-83e4-7aeb83158a98" name="SigipimpcauAcores"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SigipimpcauPortSoap11</con:interface><con:operation>Sigipimpcau</con:operation><con:request name="SigipimpcauAcores" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="925baeba-09c1-4ade-b9f8-2267b94067b9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sigipcauiws.tainfpautaldev.ritta.local:80/sigipcauiws/ws</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:SigipimpcauRequest>
+         <sch:request>
+            <!--Optional:-->
+            <sch:VersionNumber>15</sch:VersionNumber>
+            <sch:ModificationDate>2008-09-28</sch:ModificationDate>
+            <sch:LocalReferenceNumber>21PT980112664200000152</sch:LocalReferenceNumber>
+            <sch:TemporaryNumber>123456789012345678</sch:TemporaryNumber>
+            <!--Optional:-->
+            <sch:DeclarationNumber>123456789012345678</sch:DeclarationNumber>
+            <sch:Date>2023-04-13</sch:Date>
+            <sch:H6Flag>1</sch:H6Flag>
+            <sch:DeclarationCustomsOffice>PT001964</sch:DeclarationCustomsOffice>
+            <!--<sch:DeclarationCustomsOffice>PT000095</sch:DeclarationCustomsOffice>-->
+            <sch:GoodsPresentationCustomsOffice>12345678</sch:GoodsPresentationCustomsOffice>
+            <!--Optional:-->
+            <sch:GrossMass>100</sch:GrossMass>
+            <!--0 to 99 repetitions:-->            
+            <!--Optional:-->
+            <sch:AdditionalInformation>
+             <sch:Code>12345</sch:Code>
+             <sch:Text>1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901</sch:Text>
+            </sch:AdditionalInformation>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <!--<sch:SupportDocument>
+            <sch:Type>U090</sch:Type>
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:SupportDocument>-->
+            <!--0 to 99 repetitions:-->
+            <!--Optional:-->
+            <sch:AdditionalReference>
+             <sch:Type>Y063</sch:Type>
+               <!--Optional:-->
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:AdditionalReference>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <sch:TransportDocument>
+            <sch:Type>U110</sch:Type>
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:TransportDocument>
+            <sch:TransportDocument>
+            <sch:Type>C640</sch:Type>
+            <sch:ReferenceNumber>121867890</sch:ReferenceNumber>
+            </sch:TransportDocument>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <!--<sch:Authorization>
+            <sch:Type>D018</sch:Type>
+            <sch:ReferenceNumber>12345678901234567890123456789012345</sch:ReferenceNumber>
+             <sch:HolderEORINumber>12345678901234567</sch:HolderEORINumber>
+            </sch:Authorization>-->
+            <!--Optional:-->
+            <sch:SimplifiedAuthorizationFlag>1</sch:SimplifiedAuthorizationFlag>
+            <sch:DestinationCountry>CH</sch:DestinationCountry>
+            <sch:DispatchingCountry>AL</sch:DispatchingCountry>
+             <!--continente-->
+            <!--<sch:RegionalCode>50A</sch:RegionalCode>-->
+             <!--açores-->
+            <sch:RegionalCode>60A</sch:RegionalCode>
+             <!--madeira-->
+            <!--<sch:RegionalCode>70A</sch:RegionalCode>-->
+            <sch:SystemId>0</sch:SystemId>
+           <sch:DeclUser>10rfrfrf</sch:DeclUser>
+            <!--1 to 5000 repetitions:-->
+            <sch:Additions>
+               <sch:AdditionNumber>1</sch:AdditionNumber>
+               <!--Optional:-->
+              <sch:SuplementaryUnit>20</sch:SuplementaryUnit>
+               <!--Optional:-->
+               <!--<sch:Usfi>20</sch:Usfi>-->
+               <!--Optional:-->
+               <sch:GrossMass>100</sch:GrossMass>
+               <!--Optional:-->
+               <sch:NetMass>100</sch:NetMass>
+               <!--Optional:-->
+              <sch:CusCode>C12345678</sch:CusCode>
+               <!--Optional:-->               
+               <sch:GoodsCodeSH>010290</sch:GoodsCodeSH>
+               <!--Optional:-->
+               <sch:GoodsCodeNC>29</sch:GoodsCodeNC>
+               <!--Optional:-->
+               <sch:GoodsCodeTARIC>30</sch:GoodsCodeTARIC>
+               <!--Optional:-->
+               <sch:OriginCountryCode>AL</sch:OriginCountryCode>
+               <!--Optional:-->
+               <sch:PreferredOriginCountry>BR</sch:PreferredOriginCountry>
+               <!--Optional:-->
+               <sch:DestinationCountry>ES</sch:DestinationCountry>
+               <!--Optional:-->
+               <!--<sch:DispatchingCountry>CA</sch:DispatchingCountry>-->
+               <!--Optional:-->
+               <sch:Preference>123</sch:Preference>
+               <!--Optional:-->
+               <sch:RequestedRegime>12</sch:RequestedRegime>
+               <!--0 to 99 repetitions:-->
+               <sch:AdditionalRegime>4II</sch:AdditionalRegime>
+               <!--Optional:-->
+               <!--<sch:QuotaOrderNumber>090113</sch:QuotaOrderNumber>-->
+               <!--Optional:-->
+               <sch:StatisticalValue>1234567890123456.45</sch:StatisticalValue>
+               <!--Optional:-->
+               <sch:ValuationMethod>1</sch:ValuationMethod>
+               <!--0 to 99 repetitions:-->
+               <!--Optional:-->
+               <sch:TaxBase>
+                  <sch:MeasureUnitAndQualifier>TNEG</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>0.100</sch:Quantity>
+               </sch:TaxBase>
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <!--<sch:UnitsForRestrictions>
+                  <sch:MeasureUnitAndQualifier>KGM</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>100</sch:Quantity>
+               </sch:UnitsForRestrictions>-->
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <sch:UnitsForH6>
+                 <sch:MeasureUnitAndQualifier>KGM</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>100</sch:Quantity>
+               </sch:UnitsForH6>
+               <sch:VatRegime>3</sch:VatRegime>
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <sch:AdditionalInformation>
+                <sch:Code>34567</sch:Code>
+                <sch:Text>234234?</sch:Text>
+               </sch:AdditionalInformation>
+               <!--0 to 99 repetitions:-->
+               <sch:SupportDocument>
+                  <sch:Type>U110</sch:Type>
+                  <sch:ReferenceNumber>12345</sch:ReferenceNumber>
+                   <!--este campo abaixo só pode ser usado nos adicionais:-->
+                  <sch:MeasureUnitAndQualifier>1234</sch:MeasureUnitAndQualifier>
+               </sch:SupportDocument>
+               <!--0 to 99 repetitions:-->
+               <sch:AdditionalReference>
+                 <sch:Type>3Y48</sch:Type>
+                 <sch:ReferenceNumber>12345688</sch:ReferenceNumber>
+               </sch:AdditionalReference>
+               <!--0 to 99 repetitions:-->
+               <!--<sch:TransportDocument>
+                <sch:Type>1234</sch:Type>
+                <sch:ReferenceNumber>1234</sch:ReferenceNumber>
+               </sch:TransportDocument>-->
+               <!--0 to 99 repetitions:-->
+               <!--<sch:Authorization>
+               <sch:Type>1234</sch:Type>
+               <sch:ReferenceNumber>12345678901234567890123567890123455</sch:ReferenceNumber>
+               <sch:HolderEORINumber>12345678901234567</sch:HolderEORINumber>
+               </sch:Authorization>-->
+               <!--0 to 99 repetitions:-->
+               <sch:SimplifiedAuthorizationFlag>0</sch:SimplifiedAuthorizationFlag>
+              <sch:NationalAdditionalCode>1060</sch:NationalAdditionalCode>
+               <!--<sch:NationalAdditionalCode>1041</sch:NationalAdditionalCode>-->
+                <!--0 to 99 repetitions:-->
+                <!--<sch:AdditionalCodeTARIC>F499</sch:AdditionalCodeTARIC>-->
+                <!--<sch:AdditionalCodeTARIC>3200</sch:AdditionalCodeTARIC>-->
+               <!--Optional:-->
+              <sch:CustomsValue>1500</sch:CustomsValue>            
+             </sch:Additions>
+         </sch:request>
+      </sch:SigipimpcauRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="bdf4b22e-d6e5-45f7-9174-950db4d33d88" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt/SigipimpcauPort/SigipimpcauRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="acoresAssertion" id="fd478161-0e1c-4ef3-9bd6-bc09b03d482f"><con:settings/><con:config><script>import com.eviware.soapui.support.GroovyUtils
+import com.eviware.soapui.support.XmlHolder
+
+def xmlReq = testRunner.testCase.testSteps['SigipimpcauAcores'].getPropertyValue("response")
+def xmlReq1 = new XmlHolder(xmlReq)
+
+for( node in xmlReq1.getDomNodes( "//*:SigipimpcauResponse/*:response/*:Additions/*:MeasureListPerAddition" )) {
+	//log.info(node)
+	//log.info("--")
+	def applicableMeasure = new XmlHolder(node).getNodeValue("//*:ApplicableMeasure")
+	log.info(applicableMeasure)
+	if(applicableMeasure == 'IVA'){
+		def applicableFee = new XmlHolder(node).getNodeValue("//*:Fee")
+		assert (applicableFee.toFloat() == 0.16f)
+	}	
+}</script></con:config></con:testStep><con:testStep type="request" id="3c6c809e-4027-4d30-a753-fb5674ddb36f" name="SigipimpcauContinente"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SigipimpcauPortSoap11</con:interface><con:operation>Sigipimpcau</con:operation><con:request name="SigipimpcauContinente" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="e308e183-d506-44ee-822c-da3f50ab7433"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sigipcauiws.tainfpautaldev.ritta.local:80/sigipcauiws/ws</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:SigipimpcauRequest>
+         <sch:request>
+            <!--Optional:-->
+            <sch:VersionNumber>15</sch:VersionNumber>
+            <sch:ModificationDate>2008-09-28</sch:ModificationDate>
+            <sch:LocalReferenceNumber>21PT980112664200000152</sch:LocalReferenceNumber>
+            <sch:TemporaryNumber>123456789012345678</sch:TemporaryNumber>
+            <!--Optional:-->
+            <sch:DeclarationNumber>123456789012345678</sch:DeclarationNumber>
+            <sch:Date>2023-04-13</sch:Date>
+            <sch:H6Flag>1</sch:H6Flag>
+            <sch:DeclarationCustomsOffice>PT001964</sch:DeclarationCustomsOffice>
+            <!--<sch:DeclarationCustomsOffice>PT000095</sch:DeclarationCustomsOffice>-->
+            <sch:GoodsPresentationCustomsOffice>12345678</sch:GoodsPresentationCustomsOffice>
+            <!--Optional:-->
+            <sch:GrossMass>100</sch:GrossMass>
+            <!--0 to 99 repetitions:-->            
+            <!--Optional:-->
+            <sch:AdditionalInformation>
+             <sch:Code>12345</sch:Code>
+             <sch:Text>1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901</sch:Text>
+            </sch:AdditionalInformation>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <!--<sch:SupportDocument>
+            <sch:Type>U090</sch:Type>
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:SupportDocument>-->
+            <!--0 to 99 repetitions:-->
+            <!--Optional:-->
+            <sch:AdditionalReference>
+             <sch:Type>Y063</sch:Type>
+               <!--Optional:-->
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:AdditionalReference>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <sch:TransportDocument>
+            <sch:Type>U110</sch:Type>
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:TransportDocument>
+            <sch:TransportDocument>
+            <sch:Type>C640</sch:Type>
+            <sch:ReferenceNumber>121867890</sch:ReferenceNumber>
+            </sch:TransportDocument>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <!--<sch:Authorization>
+            <sch:Type>D018</sch:Type>
+            <sch:ReferenceNumber>12345678901234567890123456789012345</sch:ReferenceNumber>
+             <sch:HolderEORINumber>12345678901234567</sch:HolderEORINumber>
+            </sch:Authorization>-->
+            <!--Optional:-->
+            <sch:SimplifiedAuthorizationFlag>1</sch:SimplifiedAuthorizationFlag>
+            <sch:DestinationCountry>CH</sch:DestinationCountry>
+            <sch:DispatchingCountry>AL</sch:DispatchingCountry>
+             <!--continente-->
+            <sch:RegionalCode>50A</sch:RegionalCode>
+             <!--açores-->
+            <!--<sch:RegionalCode>60A</sch:RegionalCode>-->
+             <!--madeira-->
+            <!--<sch:RegionalCode>70A</sch:RegionalCode>-->
+            <sch:SystemId>0</sch:SystemId>
+           <sch:DeclUser>10rfrfrf</sch:DeclUser>
+            <!--1 to 5000 repetitions:-->
+            <sch:Additions>
+               <sch:AdditionNumber>1</sch:AdditionNumber>
+               <!--Optional:-->
+              <sch:SuplementaryUnit>20</sch:SuplementaryUnit>
+               <!--Optional:-->
+               <!--<sch:Usfi>20</sch:Usfi>-->
+               <!--Optional:-->
+               <sch:GrossMass>100</sch:GrossMass>
+               <!--Optional:-->
+               <sch:NetMass>100</sch:NetMass>
+               <!--Optional:-->
+              <sch:CusCode>C12345678</sch:CusCode>
+               <!--Optional:-->               
+               <sch:GoodsCodeSH>010290</sch:GoodsCodeSH>
+               <!--Optional:-->
+               <sch:GoodsCodeNC>29</sch:GoodsCodeNC>
+               <!--Optional:-->
+               <sch:GoodsCodeTARIC>30</sch:GoodsCodeTARIC>
+               <!--Optional:-->
+               <sch:OriginCountryCode>AL</sch:OriginCountryCode>
+               <!--Optional:-->
+               <sch:PreferredOriginCountry>BR</sch:PreferredOriginCountry>
+               <!--Optional:-->
+               <sch:DestinationCountry>ES</sch:DestinationCountry>
+               <!--Optional:-->
+               <!--<sch:DispatchingCountry>CA</sch:DispatchingCountry>-->
+               <!--Optional:-->
+               <sch:Preference>123</sch:Preference>
+               <!--Optional:-->
+               <sch:RequestedRegime>12</sch:RequestedRegime>
+               <!--0 to 99 repetitions:-->
+               <sch:AdditionalRegime>4II</sch:AdditionalRegime>
+               <!--Optional:-->
+               <!--<sch:QuotaOrderNumber>090113</sch:QuotaOrderNumber>-->
+               <!--Optional:-->
+               <sch:StatisticalValue>1234567890123456.45</sch:StatisticalValue>
+               <!--Optional:-->
+               <sch:ValuationMethod>1</sch:ValuationMethod>
+               <!--0 to 99 repetitions:-->
+               <!--Optional:-->
+               <sch:TaxBase>
+                  <sch:MeasureUnitAndQualifier>TNEG</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>0.100</sch:Quantity>
+               </sch:TaxBase>
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <!--<sch:UnitsForRestrictions>
+                  <sch:MeasureUnitAndQualifier>KGM</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>100</sch:Quantity>
+               </sch:UnitsForRestrictions>-->
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <sch:UnitsForH6>
+                 <sch:MeasureUnitAndQualifier>KGM</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>100</sch:Quantity>
+               </sch:UnitsForH6>
+               <sch:VatRegime>3</sch:VatRegime>
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <sch:AdditionalInformation>
+                <sch:Code>34567</sch:Code>
+                <sch:Text>234234?</sch:Text>
+               </sch:AdditionalInformation>
+               <!--0 to 99 repetitions:-->
+               <sch:SupportDocument>
+                  <sch:Type>U110</sch:Type>
+                  <sch:ReferenceNumber>12345</sch:ReferenceNumber>
+                   <!--este campo abaixo só pode ser usado nos adicionais:-->
+                  <sch:MeasureUnitAndQualifier>1234</sch:MeasureUnitAndQualifier>
+               </sch:SupportDocument>
+               <!--0 to 99 repetitions:-->
+               <sch:AdditionalReference>
+                 <sch:Type>3Y48</sch:Type>
+                 <sch:ReferenceNumber>12345688</sch:ReferenceNumber>
+               </sch:AdditionalReference>
+               <!--0 to 99 repetitions:-->
+               <!--<sch:TransportDocument>
+                <sch:Type>1234</sch:Type>
+                <sch:ReferenceNumber>1234</sch:ReferenceNumber>
+               </sch:TransportDocument>-->
+               <!--0 to 99 repetitions:-->
+               <!--<sch:Authorization>
+               <sch:Type>1234</sch:Type>
+               <sch:ReferenceNumber>12345678901234567890123567890123455</sch:ReferenceNumber>
+               <sch:HolderEORINumber>12345678901234567</sch:HolderEORINumber>
+               </sch:Authorization>-->
+               <!--0 to 99 repetitions:-->
+               <sch:SimplifiedAuthorizationFlag>0</sch:SimplifiedAuthorizationFlag>
+              <sch:NationalAdditionalCode>1060</sch:NationalAdditionalCode>
+               <!--<sch:NationalAdditionalCode>1041</sch:NationalAdditionalCode>-->
+                <!--0 to 99 repetitions:-->
+                <!--<sch:AdditionalCodeTARIC>F499</sch:AdditionalCodeTARIC>-->
+                <!--<sch:AdditionalCodeTARIC>3200</sch:AdditionalCodeTARIC>-->
+               <!--Optional:-->
+              <sch:CustomsValue>1500</sch:CustomsValue>            
+             </sch:Additions>
+         </sch:request>
+      </sch:SigipimpcauRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5a4322e4-e8a8-4887-b4e2-2eb28d9a7cfb" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt/SigipimpcauPort/SigipimpcauRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="continenteAssertion" id="1efec8ef-d074-4170-863a-75a9820d78e4"><con:settings/><con:config><script>import com.eviware.soapui.support.GroovyUtils
+import com.eviware.soapui.support.XmlHolder
+
+def xmlReq = testRunner.testCase.testSteps['SigipimpcauContinente'].getPropertyValue("response")
+def xmlReq1 = new XmlHolder(xmlReq)
+
+for( node in xmlReq1.getDomNodes( "//*:SigipimpcauResponse/*:response/*:Additions/*:MeasureListPerAddition" )) {
+	//log.info(node)
+	//log.info("--")
+	def applicableMeasure = new XmlHolder(node).getNodeValue("//*:ApplicableMeasure")
+	log.info(applicableMeasure)
+	if(applicableMeasure == 'IVA'){
+		def applicableFee = new XmlHolder(node).getNodeValue("//*:Fee")
+		assert (applicableFee.toFloat() == 0.23f)
+	}	
+}</script></con:config></con:testStep><con:testStep type="request" id="5031df74-982e-49d6-a0bd-47eab4c9bea4" name="SigipimpcauMadeira"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SigipimpcauPortSoap11</con:interface><con:operation>Sigipimpcau</con:operation><con:request name="SigipimpcauMadeira" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="16634575-fe99-4651-b1ef-393fe6a75534"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://sigipcauiws.tainfpautaldev.ritta.local:80/sigipcauiws/ws</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:SigipimpcauRequest>
+         <sch:request>
+            <!--Optional:-->
+            <sch:VersionNumber>15</sch:VersionNumber>
+            <sch:ModificationDate>2008-09-28</sch:ModificationDate>
+            <sch:LocalReferenceNumber>21PT980112664200000152</sch:LocalReferenceNumber>
+            <sch:TemporaryNumber>123456789012345678</sch:TemporaryNumber>
+            <!--Optional:-->
+            <sch:DeclarationNumber>123456789012345678</sch:DeclarationNumber>
+            <sch:Date>2023-04-13</sch:Date>
+            <sch:H6Flag>1</sch:H6Flag>
+            <sch:DeclarationCustomsOffice>PT001964</sch:DeclarationCustomsOffice>
+            <!--<sch:DeclarationCustomsOffice>PT000095</sch:DeclarationCustomsOffice>-->
+            <sch:GoodsPresentationCustomsOffice>12345678</sch:GoodsPresentationCustomsOffice>
+            <!--Optional:-->
+            <sch:GrossMass>100</sch:GrossMass>
+            <!--0 to 99 repetitions:-->            
+            <!--Optional:-->
+            <sch:AdditionalInformation>
+             <sch:Code>12345</sch:Code>
+             <sch:Text>1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901</sch:Text>
+            </sch:AdditionalInformation>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <!--<sch:SupportDocument>
+            <sch:Type>U090</sch:Type>
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:SupportDocument>-->
+            <!--0 to 99 repetitions:-->
+            <!--Optional:-->
+            <sch:AdditionalReference>
+             <sch:Type>Y063</sch:Type>
+               <!--Optional:-->
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:AdditionalReference>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <sch:TransportDocument>
+            <sch:Type>U110</sch:Type>
+            <sch:ReferenceNumber>1234567890123456789012345678901234567890123456789012345678901234567890</sch:ReferenceNumber>
+            </sch:TransportDocument>
+            <sch:TransportDocument>
+            <sch:Type>C640</sch:Type>
+            <sch:ReferenceNumber>121867890</sch:ReferenceNumber>
+            </sch:TransportDocument>
+            <!--0 to 99 repetitions:-->
+             <!--Optional:-->
+            <!--<sch:Authorization>
+            <sch:Type>D018</sch:Type>
+            <sch:ReferenceNumber>12345678901234567890123456789012345</sch:ReferenceNumber>
+             <sch:HolderEORINumber>12345678901234567</sch:HolderEORINumber>
+            </sch:Authorization>-->
+            <!--Optional:-->
+            <sch:SimplifiedAuthorizationFlag>1</sch:SimplifiedAuthorizationFlag>
+            <sch:DestinationCountry>CH</sch:DestinationCountry>
+            <sch:DispatchingCountry>AL</sch:DispatchingCountry>
+             <!--continente-->
+            <!--<sch:RegionalCode>50A</sch:RegionalCode>-->
+             <!--açores-->
+            <!--<sch:RegionalCode>60A</sch:RegionalCode>-->
+             <!--madeira-->
+            <sch:RegionalCode>70A</sch:RegionalCode>
+            <sch:SystemId>0</sch:SystemId>
+           <sch:DeclUser>10rfrfrf</sch:DeclUser>
+            <!--1 to 5000 repetitions:-->
+            <sch:Additions>
+               <sch:AdditionNumber>1</sch:AdditionNumber>
+               <!--Optional:-->
+              <sch:SuplementaryUnit>20</sch:SuplementaryUnit>
+               <!--Optional:-->
+               <!--<sch:Usfi>20</sch:Usfi>-->
+               <!--Optional:-->
+               <sch:GrossMass>100</sch:GrossMass>
+               <!--Optional:-->
+               <sch:NetMass>100</sch:NetMass>
+               <!--Optional:-->
+              <sch:CusCode>C12345678</sch:CusCode>
+               <!--Optional:-->               
+               <sch:GoodsCodeSH>010290</sch:GoodsCodeSH>
+               <!--Optional:-->
+               <sch:GoodsCodeNC>29</sch:GoodsCodeNC>
+               <!--Optional:-->
+               <sch:GoodsCodeTARIC>30</sch:GoodsCodeTARIC>
+               <!--Optional:-->
+               <sch:OriginCountryCode>AL</sch:OriginCountryCode>
+               <!--Optional:-->
+               <sch:PreferredOriginCountry>BR</sch:PreferredOriginCountry>
+               <!--Optional:-->
+               <sch:DestinationCountry>ES</sch:DestinationCountry>
+               <!--Optional:-->
+               <!--<sch:DispatchingCountry>CA</sch:DispatchingCountry>-->
+               <!--Optional:-->
+               <sch:Preference>123</sch:Preference>
+               <!--Optional:-->
+               <sch:RequestedRegime>12</sch:RequestedRegime>
+               <!--0 to 99 repetitions:-->
+               <sch:AdditionalRegime>4II</sch:AdditionalRegime>
+               <!--Optional:-->
+               <!--<sch:QuotaOrderNumber>090113</sch:QuotaOrderNumber>-->
+               <!--Optional:-->
+               <sch:StatisticalValue>1234567890123456.45</sch:StatisticalValue>
+               <!--Optional:-->
+               <sch:ValuationMethod>1</sch:ValuationMethod>
+               <!--0 to 99 repetitions:-->
+               <!--Optional:-->
+               <sch:TaxBase>
+                  <sch:MeasureUnitAndQualifier>TNEG</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>0.100</sch:Quantity>
+               </sch:TaxBase>
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <!--<sch:UnitsForRestrictions>
+                  <sch:MeasureUnitAndQualifier>KGM</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>100</sch:Quantity>
+               </sch:UnitsForRestrictions>-->
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <sch:UnitsForH6>
+                 <sch:MeasureUnitAndQualifier>KGM</sch:MeasureUnitAndQualifier>
+                  <sch:Quantity>100</sch:Quantity>
+               </sch:UnitsForH6>
+               <sch:VatRegime>3</sch:VatRegime>
+               <!--0 to 99 repetitions:-->
+                <!--Optional:-->
+               <sch:AdditionalInformation>
+                <sch:Code>34567</sch:Code>
+                <sch:Text>234234?</sch:Text>
+               </sch:AdditionalInformation>
+               <!--0 to 99 repetitions:-->
+               <sch:SupportDocument>
+                  <sch:Type>U110</sch:Type>
+                  <sch:ReferenceNumber>12345</sch:ReferenceNumber>
+                   <!--este campo abaixo só pode ser usado nos adicionais:-->
+                  <sch:MeasureUnitAndQualifier>1234</sch:MeasureUnitAndQualifier>
+               </sch:SupportDocument>
+               <!--0 to 99 repetitions:-->
+               <sch:AdditionalReference>
+                 <sch:Type>3Y48</sch:Type>
+                 <sch:ReferenceNumber>12345688</sch:ReferenceNumber>
+               </sch:AdditionalReference>
+               <!--0 to 99 repetitions:-->
+               <!--<sch:TransportDocument>
+                <sch:Type>1234</sch:Type>
+                <sch:ReferenceNumber>1234</sch:ReferenceNumber>
+               </sch:TransportDocument>-->
+               <!--0 to 99 repetitions:-->
+               <!--<sch:Authorization>
+               <sch:Type>1234</sch:Type>
+               <sch:ReferenceNumber>12345678901234567890123567890123455</sch:ReferenceNumber>
+               <sch:HolderEORINumber>12345678901234567</sch:HolderEORINumber>
+               </sch:Authorization>-->
+               <!--0 to 99 repetitions:-->
+               <sch:SimplifiedAuthorizationFlag>0</sch:SimplifiedAuthorizationFlag>
+              <sch:NationalAdditionalCode>1060</sch:NationalAdditionalCode>
+               <!--<sch:NationalAdditionalCode>1041</sch:NationalAdditionalCode>-->
+                <!--0 to 99 repetitions:-->
+                <!--<sch:AdditionalCodeTARIC>F499</sch:AdditionalCodeTARIC>-->
+                <!--<sch:AdditionalCodeTARIC>3200</sch:AdditionalCodeTARIC>-->
+               <!--Optional:-->
+              <sch:CustomsValue>1500</sch:CustomsValue>            
+             </sch:Additions>
+         </sch:request>
+      </sch:SigipimpcauRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5724d5e9-ddb4-471a-ad07-c57b23736293" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://schema.soap.web.sigipimpcau.sigip.at.gov.pt/SigipimpcauPort/SigipimpcauRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="madeiraAssertion" id="ced11db2-aa20-4598-bf84-b7a8c4393ddb"><con:settings/><con:config><script>import com.eviware.soapui.support.GroovyUtils
+import com.eviware.soapui.support.XmlHolder
+
+def xmlReq = testRunner.testCase.testSteps['SigipimpcauMadeira'].getPropertyValue("response")
+def xmlReq1 = new XmlHolder(xmlReq)
+
+for( node in xmlReq1.getDomNodes( "//*:SigipimpcauResponse/*:response/*:Additions/*:MeasureListPerAddition" )) {
+	//log.info(node)
+	//log.info("--")
+	def applicableMeasure = new XmlHolder(node).getNodeValue("//*:ApplicableMeasure")
+	log.info(applicableMeasure)
+	if(applicableMeasure == 'IVA'){
+		def applicableFee = new XmlHolder(node).getNodeValue("//*:Fee")
+		assert (applicableFee.toFloat() == 0.22f)
+	}	
+}</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
