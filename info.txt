@@ -1,0 +1,23 @@
+C:\Users\nuno\.jenkins\workspace\SIGIP-POC\sigipcauiws.xml
+
+
+
+
+c:
+cd C:\Program Files\SmartBear\SoapUI-5.7.1\bin
+testrunner.bat -s"TestSuite1" C:\Users\nuno\.jenkins\workspace\SIGIP-POC\sigipcauiws.xml
+
+
+
+c:
+cd C:\Program Files\SmartBear\SoapUI-5.7.1\bin\
+testrunner.bat -s"TestSuite1" C:\Users\nuno\.jenkins\workspace\SIGIP-POC\sigipcauiws.xml
+
+
+Acho que temos de guardar em vez de exportar!!!!
+
+
+Notas:
+c:
+cd C:\Program Files\SmartBear\SoapUI-5.7.1\bin\
+testrunner.bat -s"TestSuite 1" C:\Users\nuno\.jenkins\workspace\SIGIP-POC\sigipcauiws-soapui-project.xml
